@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Installing INDI 3rd-Party Driver Packages</title>
+</head>
+<body>
+
+<h2>Installing INDI 3rd-Party Driver Packages</h2>
+
+To install the INDI 3rd-party drivers you need (for example, to control your camera or EQMod mount), open a terminal — you can use <b>Konsole</b>, which is already linked on the desktop and in the taskbar — and then:
+
+<br><br>
+
+<b>a)</b> Search for the driver package with:
+
+<pre>apt search indi-SOMETHING</pre>
+
+(where <i>SOMETHING</i> is, for example, your camera vendor), and then install it with:
+
+<pre>sudo apt install PACKAGE</pre>
+
+Or, you can:
+
+<br><br>
+
+<b>b)</b> Install all available INDI 3rd-party drivers (approximately 340 MB) with:
+<pre>sudo apt install indi-3rdparty-all</pre>
+To see which driver packages are included, type:
+<pre>apt info indi-3rdparty-all</pre>
+and read the package description.
+</body>
+</html>
+

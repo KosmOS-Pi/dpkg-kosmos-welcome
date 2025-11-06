@@ -1,0 +1,4 @@
+kosmos-welcome.sh /usr/bin
+welcome.qml /usr/share/kosmos-welcome
+kosmos-welcome.desktop /etc/xdg/autostart
+kosmos-logo-* /usr/share/pixmaps

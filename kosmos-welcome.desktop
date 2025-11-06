@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=/usr/bin/kosmos-welcome.sh
+GenericName[en_US]=
+GenericName=
+Icon=help-about
+MimeType=
+Name[en_US]=KosmOS Welcome
+Name=KosmOS Welcome
+OnlyShownIn=KDE;
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+X-KDE-autostart-after=panel

@@ -1,0 +1,16 @@
+Source: kosmos-welcome
+Section: misc
+Priority: optional
+Maintainer: Matteo Piscitelli <matteo@matteopiscitelli.it>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.1
+Homepage: https://kosmos-pi.org
+Rules-Requires-Root: no
+
+Package: kosmos-welcome
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Displays a welcome window at first login.
+ Displays a welcome window when a user first login to
+ desktop, to provide simple instructions to start.
