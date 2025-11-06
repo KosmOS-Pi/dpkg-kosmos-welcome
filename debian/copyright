@@ -1,9 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: kosmos-welcome
-Upstream-Contact: <preferred name and address to reach the upstream project>
-Source: <url://example.com>
-#
-# Please double check copyright with the licensecheck(1) command.
+Upstream-Contact: Matteo Piscitelli <matteo@matteopiscitelli.it>
+Source: https://github.com/KosmOS-Pi/dpkg-kosmos-welcome.git
 
 Files:     *
 Copyright: 2025 Matteo Piscitelli <matteo@matteopiscitelli.it>
