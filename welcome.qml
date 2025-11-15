@@ -78,7 +78,7 @@ ApplicationWindow {
 
             Label {
                 textFormat: Text.RichText
-                text: "<b>INDI</b>, <b>KStars</b> and <b>PHD2</b> are already installed and ready to start. Please be warned that, to save disk space, <b>INDI 3rd-party</b> drivers are <b>not</b> installed at the moment: please read the instructions clicking the button <i>INDI 3rd-party</i> below to install the ones you need."
+                text: "<b>INDI</b>, <b>KStars</b> and <b>PHD2</b> are already installed and ready to start. Please be warned that, to save disk space, <b>INDI 3rd-party</b> drivers and <b>astrometry indexes</b> are <b>not installed</b> at the moment. To learn more about this, and for other useful details to help you get started, press the button <i>Getting started...</i> below and read the document."
                 font.pointSize: 10
                 color: window.palette.text
                 wrapMode: Text.WordWrap
@@ -98,8 +98,8 @@ ApplicationWindow {
                 }
 
                 Button {
-                    text: "INDI 3rd-party..."
-                    onClicked: Qt.openUrlExternally("file:///usr/share/doc/kosmos-welcome/installing-indi-3rdparty.html")
+                    text: "Getting started..."
+                    onClicked: Qt.openUrlExternally("file:///usr/share/doc/kosmos-welcome/kosmos-getting-started-guide.html")
                     font.pointSize: 11
                 }
 

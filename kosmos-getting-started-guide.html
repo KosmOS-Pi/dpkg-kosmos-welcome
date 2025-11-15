@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Getting started with KosmOS</title>
+</head>
+<body>
+
+<h1>Getting started with KosmOS</h1>
+
+<h2>Installing INDI 3rd-Party Driver Packages</h2>
+
+To install the INDI 3rd-party drivers you need (for example, to control your camera or EQMod mount), open a terminal — you can use <b>Konsole</b>, which is already linked on the desktop and in the taskbar — and then:
+
+<br><br>
+
+<b>a)</b> Search for the driver package with:
+
+<pre>apt search indi-SOMETHING</pre>
+
+(where <i>SOMETHING</i> is, for example, your camera vendor), and then install it with:
+
+<pre>sudo apt install PACKAGE</pre>
+
+Or, you can:
+
+<br><br>
+
+<b>b)</b> Install all available INDI 3rd-party drivers (approximately 250 MB) with:
+<pre>sudo apt install indi-3rdparty-all</pre>
+To see which driver packages are included, type:
+<pre>apt info indi-3rdparty-all</pre>
+and read the package description.
+
+<h2>Astrometric indexes</h2>
+KStars Ekos tool (through libstellarsolver) needs astrometric index files to plate solve images. To save disk space, indexes are not installed automatically: the entire collection is over 30GB in size. You can download only the ones necessary to your setup. To do that, press the <i>Options</i> button in the Ekos <i>Align</i> module, select <i>Index Files</i> panel, and download the <i>Required</i> and <i>Recommended</i> ones. For further information, please check <a href="https://kstars-docs.kde.org/en/user_manual/ekos-align.html" target="_blank">The KStars handbook</a>.
+
+<h2>Samba share</h2>
+By default, KosmOS shares your home directory in writable and browsable mode. To access it you can use your username: for technical reasons, KosmOS can not sync your Samba  password to the login password you chose at installation time, so it provides your user with a default password:
+
+<pre>KosmOSamb@</pre>
+
+You can (and should) change it opening a terminal and typing:
+
+<pre>smbpasswd</pre>
+
+You can of course use the same password you use for login, if you wish.
+
+</body>
+</html>
+
