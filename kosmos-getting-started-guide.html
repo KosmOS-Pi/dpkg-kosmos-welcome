@@ -1,49 +1,57 @@
 <html>
-<head>
-    <title>Getting started with KosmOS</title>
-</head>
-<body>
+    <head>
+        <title>Getting started with KosmOS</title>
+    </head>
+    <body style="margin-top:24px;margin-left:48px;margin-right:48px;">
 
-<h1>Getting started with KosmOS</h1>
+        <h1>Getting started with KosmOS</h1>
 
-<h2>Installing INDI 3rd-Party Driver Packages</h2>
+        <h2>Installing INDI 3rd-Party Driver Packages</h2>
 
-To install the INDI 3rd-party drivers you need (for example, to control your camera or EQMod mount), open a terminal — you can use <b>Konsole</b>, which is already linked on the desktop and in the taskbar — and then:
+        To install the INDI 3rd-party drivers you need (for example, to control your camera or EQMod mount), open a terminal — you can use <b>Konsole</b>, which is already linked on the desktop and in the taskbar — and then:
 
-<br><br>
+        <br><br>
 
-<b>a)</b> Search for the driver package with:
+        <b>a)</b> Search for the driver package with:
 
-<pre>apt search indi-SOMETHING</pre>
+        <pre>apt search indi-SOMETHING</pre>
 
-(where <i>SOMETHING</i> is, for example, your camera vendor), and then install it with:
+        (where <i>SOMETHING</i> is, for example, your camera vendor), and then install it with:
 
-<pre>sudo apt install PACKAGE</pre>
+        <pre>sudo apt install PACKAGE</pre>
 
-Or, you can:
+        Or, you can:
 
-<br><br>
+        <br><br>
 
-<b>b)</b> Install all available INDI 3rd-party drivers (approximately 250 MB) with:
-<pre>sudo apt install indi-3rdparty-all</pre>
-To see which driver packages are included, type:
-<pre>apt info indi-3rdparty-all</pre>
-and read the package description.
+        <b>b)</b> Install all available INDI 3rd-party drivers (approximately 250 MB) with:
+        <pre>sudo apt install indi-3rdparty-all</pre>
+        To see which driver packages are included, type:
+        <pre>apt info indi-3rdparty-all</pre>
+        and read the package description.
 
-<h2>Astrometric indexes</h2>
-KStars Ekos tool (through libstellarsolver) needs astrometric index files to plate solve images. To save disk space, indexes are not installed automatically: the entire collection is over 30GB in size. You can download only the ones necessary to your setup. To do that, press the <i>Options</i> button in the Ekos <i>Align</i> module, select <i>Index Files</i> panel, and download the <i>Required</i> and <i>Recommended</i> ones. For further information, please check <a href="https://kstars-docs.kde.org/en/user_manual/ekos-align.html" target="_blank">The KStars handbook</a>.
+        <h2>Astrometric indexes</h2>
+        KStars Ekos tool (through libstellarsolver) needs astrometric index files to plate solve images. To save disk space, indexes are not installed automatically: the entire collection is over 30GB in size. You can download only the ones necessary to your setup. To do that, press the <i>Options</i> button in the Ekos <i>Align</i> module, select <i>Index Files</i> panel, and download the <i>Required</i> and <i>Recommended</i> ones. For further information, please check <a href="https://kstars-docs.kde.org/en/user_manual/ekos-align.html" target="_blank">The KStars handbook</a>.
 
-<h2>Samba share</h2>
-By default, KosmOS shares your home directory in writable and browsable mode. To access it you can use your username: for technical reasons, KosmOS can not sync your Samba  password to the login password you chose at installation time, so it provides your user with a default password:
+        <h2>Samba share</h2>
+        By default, KosmOS shares your home directory in writable and browsable mode. To access it you can use your username: for technical reasons, KosmOS can not sync your Samba  password to the login password you chose at installation time, so it provides your user with a default password:
 
-<pre>KosmOSamb@</pre>
+        <pre>KosmOSamb@</pre>
 
-You can (and should) change it opening a terminal and typing:
+        You can (and should) change it opening a terminal and typing:
 
-<pre>smbpasswd</pre>
+        <pre>smbpasswd</pre>
 
-You can of course use the same password you use for login, if you wish.
+        You can of course use the same password you use for login, if you wish.
 
-</body>
+        <h2>News from KosmOS</h2>
+
+        <img src="img/notification.png" style="margin-left:8px; float:right;" />
+        <p>KosmOS comes with a notification system that receives and displays (when you log in) important events from the KosmOS Team, such as important software updates, major bugs or security warnings. Notifications will popup as non-intrusive desktop notifications (as you can see in the image). Please note that every event will be shown more than once (every time you login to the system) inside its validity period, unless you press the <i>Do not show again</i> button of the notification itself.</p>
+
+        <p>If you don't want to receive any notification from KosmOS, you can entirely disable the system by launching <i>System Settings</i> and selecting <i>News from Kosmos</i> inside the <i>Personalization</i> panel.</p>
+        <img src="img/preferences.png"  />
+
+    </body>
 </html>
 
