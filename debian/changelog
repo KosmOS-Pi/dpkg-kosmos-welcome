@@ -1,3 +1,9 @@
+kosmos-welcome (1.4-1) bookworm; urgency=medium
+
+  * Update getting started guide (#5).
+
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Mon, 22 Dec 2025 13:06:47 +0100
+
 kosmos-welcome (1.3-1) bookworm; urgency=low
 
   * Update getting started guide.
