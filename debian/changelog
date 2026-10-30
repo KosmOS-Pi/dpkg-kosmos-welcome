@@ -1,4 +1,4 @@
-kosmos-welcome (1.5-1+kosmos-1~trixie) trixie; urgency=medium
+kosmos-welcome (1.5-1+kosmos-1~deb13) trixie; urgency=medium
 
   * Update for QT6 on trixie.
 
