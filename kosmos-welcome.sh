@@ -10,6 +10,6 @@ else
 fi
 
 if [ "$FLAG" = "false" ]; then
-	qmlscene $WELCOME &
+	QT_QPA_PLATFORMTHEME=generic /usr/lib/qt6/bin/qml --style Fusion $WELCOME
 	touch $FLAG
 fi

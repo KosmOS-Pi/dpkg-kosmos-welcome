@@ -1,21 +1,22 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-import Qt.labs.settings 1.1
-import Qt.labs.platform 1.1 as Platform
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import Qt.labs.settings
+import Qt.labs.platform as Platform
 
 ApplicationWindow {
     id: window
-    width: 640
-    height: 480
+    width: 720  // Aumentato da 640 a 720 per accomodare i margini di Qt6
+    height: 520 // Aumentato leggermente da 480 a 520 per dare più respiro verticale
     visible: true
     title: "Welcome to KosmOS"
 
-    property bool darkTheme:    window.palette.window.r < 0.5 &&
-                                window.palette.window.g < 0.5 &&
-                                window.palette.window.b < 0.5
-
-    //property bool dontShowAgain: false
+    property bool darkTheme: {
+        if (window.palette && window.palette.window) {
+            return window.palette.window.r < 0.5;
+        }
+        return true;
+    }
 
     property string configPath: {
         var url = String(Platform.StandardPaths.writableLocation(Platform.StandardPaths.ConfigLocation))
@@ -28,30 +29,24 @@ ApplicationWindow {
         property bool dontShowAgain: false
     }
 
-    // Imposta lo stile Fusion (opzionale ma coerente)
-    Component.onCompleted: Qt.callLater(function() {
-        Qt.application.style = "Fusion"
-    })
-
     Rectangle {
         anchors.fill: parent
-        // Usa la palette del window (Qt5)
         color: window.palette.window
         border.color: window.palette.mid
 
         ColumnLayout {
             anchors.centerIn: parent
-            spacing: 24
-            width: parent.width * 0.8
+            spacing: 20
+            width: parent.width * 0.9 // Leggermente allargato per sfruttare meglio lo spazio
 
             Image {
                 source: darkTheme ?
-                    "file:///usr/share/pixmaps/kosmos-logo-dark.png" :
-                    "file:///usr/share/pixmaps/kosmos-logo-light.png"
+                "file:///usr/share/pixmaps/kosmos-logo-dark.png" :
+                "file:///usr/share/pixmaps/kosmos-logo-light.png"
                 width: 256
                 height: 72
                 fillMode: Image.PreserveAspectFit
-                anchors.horizontalCenter: parent.horizontalCenter
+                Layout.alignment: Qt.AlignHCenter
             }
 
             Label {
@@ -61,6 +56,7 @@ ApplicationWindow {
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
             }
 
             Label {
@@ -73,7 +69,8 @@ ApplicationWindow {
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 Layout.alignment: Qt.AlignHCenter
-                Layout.maximumWidth: 540
+                Layout.fillWidth: true
+                Layout.maximumWidth: 600
             }
 
             Label {
@@ -84,36 +81,44 @@ ApplicationWindow {
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter
                 Layout.alignment: Qt.AlignHCenter
-                Layout.maximumWidth: 540
+                Layout.fillWidth: true
+                Layout.maximumWidth: 600
             }
 
+            // RISOLUTIVO: Il RowLayout ora si adatta alla larghezza disponibile
             RowLayout {
-                spacing: 16
+                spacing: 12
                 Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+
+                // Un elemento vuoto a sinistra e uno a destra creano una centratura elastica perfetta in Qt6
+                Item { Layout.fillWidth: true }
 
                 Button {
                     text: "Theme selector..."
                     onClicked: Qt.openUrlExternally("systemsettings://kcm_lookandfeel")
-                    font.pointSize: 11
+                    font.pointSize: 10 // Ridotto leggermente a 10 per uniformità visiva in Qt6
                 }
 
                 Button {
                     text: "Getting started..."
                     onClicked: Qt.openUrlExternally("file:///usr/share/doc/kosmos-welcome/kosmos-getting-started-guide.html")
-                    font.pointSize: 11
+                    font.pointSize: 10
                 }
 
                 Button {
                     text: "Visit KosmOS website..."
                     onClicked: Qt.openUrlExternally("https://kosmos-pi.org")
-                    font.pointSize: 11
+                    font.pointSize: 10
                 }
 
                 Button {
                     text: "Close"
                     onClicked: Qt.quit()
-                    font.pointSize: 11
+                    font.pointSize: 10
                 }
+
+                Item { Layout.fillWidth: true }
             }
 
             Label {
@@ -129,8 +134,8 @@ ApplicationWindow {
                 text: "Don't show this window again"
                 checked: kosmosWelcomeSettings.dontShowAgain
                 onToggled: kosmosWelcomeSettings.dontShowAgain = checked
+                Layout.alignment: Qt.AlignHCenter
             }
-
         }
     }
 }
