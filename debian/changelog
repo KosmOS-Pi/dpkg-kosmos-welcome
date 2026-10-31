@@ -1,8 +1,8 @@
-kosmos-welcome (1.5-1+kosmos-1~deb13) trixie; urgency=medium
+kosmos-welcome (1.5-1~deb13) trixie; urgency=medium
 
   * Update for QT6 on trixie.
 
- -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Fri, 30 Oct 2026 19:10:54 +0100
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Sat, 31 Oct 2026 18:35:23 +0100
 
 kosmos-welcome (1.4-1) bookworm; urgency=medium
 
